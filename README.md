@@ -6,6 +6,8 @@
 Sistema de gestión de inventario inteligente, diseñado para ser rápido, seguro y visualmente atractivo. Permite controlar stock en tiempo real, visualizar métricas y auditar movimientos.
 
 🔗 **Demo en vivo:** [https://cloudstock.netlify.app](https://cloudstock.netlify.app)
+Correo para iniciar sesión: prueba@example.com
+Contraseña: Prueba123
 
 
 ## 🚀 Características
