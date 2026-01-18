@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --primary: #6366f1;
+  --danger: #ef4444;
+  --success: #10b981;
+  --dark: #1e293b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--dark);
+  
+  /* NUEVO FONDO: Suave, profesional y limpio */
+  background: linear-gradient(-45deg, #e0e7ff, #dbeafe, #f3e8ff, #eef2ff);
+  background-size: 400% 400%;
+  animation: gradient 25s ease infinite; /* Animación muy lenta y relajante */
+  
+  min-height: 100vh;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --- ESTRUCTURA PRINCIPAL --- */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  
+  /* Fondo más sutil y borde oscuro muy suave */
+  background: rgba(255, 255, 255, 0.4);
+  -webkit-backdrop-filter: blur(16px); 
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); 
+  
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary); /* Ahora usamos el color índigo, no blanco */
+  text-shadow: none; /* Quitamos la sombra que ensuciaba */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--dark); /* Texto oscuro para que se lea bien */
+  font-weight: 500;
+}
+
+/* --- PANELES DE CRISTAL (Glassmorphism) --- */
+.glass-panel {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  margin-bottom: 2rem;
+}
+
+/* --- INPUTS Y BOTONES --- */
+.form-row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+input {
+  flex: 1;
+  padding: 14px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.6);
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+input:focus {
+  background: white;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+}
+
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+}
+
+.btn-action { padding: 8px 12px; border-radius: 8px; margin: 0 4px; font-size: 0.9rem; }
+.btn-edit { background: #fbbf24; color: #78350f; }
+.btn-delete { background: #fda4af; color: #881337; }
+.btn-stock { background: #e2e8f0; color: #334155; font-weight: bold; width: 32px; height: 32px; padding: 0; }
+
+/* --- TABLA --- */
+table { 
+  width: 100%; 
+  border-collapse: separate; 
+  border-spacing: 0 8px; 
+}
+
+th { 
+  text-align: left; 
+  padding: 10px; 
+  color: #64748b; 
+  font-size: 0.85rem; 
+  text-transform: uppercase; 
+}
+
+td { 
+  background: rgba(255,255,255,0.5); 
+  padding: 15px; 
+  /* Eliminamos las líneas que daban error aquí dentro */
+}
+
+/* Las reglas de bordes redondeados deben ir separadas así: */
+tr td:first-child { 
+  border-top-left-radius: 12px; 
+  border-bottom-left-radius: 12px; 
+}
+
+tr td:last-child { 
+  border-top-right-radius: 12px; 
+  border-bottom-right-radius: 12px; 
+}
+
+/* --- FOOTER --- */
+/* --- FOOTER PROFESIONAL --- */
+.footer {
+  margin-top: auto; /* Empuja el footer siempre al final, aunque haya poco contenido */
+  background: rgba(255, 255, 255, 0.5); /* Cristal suave */
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  font-size: 0.9rem;
+  color: var(--dark);
+  flex-wrap: wrap; /* Para que se adapte en móviles */
+  gap: 20px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  transition: color 0.2s;
+  opacity: 0.7;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+  opacity: 1;
+}
+
+.footer-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  opacity: 0.8;
+  text-align: right;
+}
+
+.version-tag {
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--primary);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* Ajuste para móviles: que se apile todo verticalmente */
+@media (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .footer-info {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+/* --- SECCIÓN DE RESUMEN / TOTALES --- */
+.summary-grid {
+  display: grid;
+  /* Se adapta automáticamente: mínimo 220px de ancho por tarjeta */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.summary-tile {
+  /* Efecto cristal ligeramente diferente al panel principal */
+  background: rgba(255, 255, 255, 0.55);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el ratón: se eleva y brilla más */
+.summary-tile:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+}
+
+.tile-icon {
+  font-size: 2.5rem;
+  /* Fondo circular suave para el icono */
+  background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(255,255,255,0.3));
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  box-shadow: inset 0 2px 4px rgba(255,255,255,0.8);
+}
+
+.tile-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.tile-number {
+  font-size: 2rem;
+  font-weight: 800;
+  /* Usamos el color primario para destacar el número */
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.tile-label {
+  font-size: 0.95rem;
+  color: var(--dark);
+  opacity: 0.7;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
