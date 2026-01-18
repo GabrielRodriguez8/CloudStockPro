@@ -7,8 +7,6 @@ Sistema de gestión de inventario inteligente, diseñado para ser rápido, segur
 
 🔗 **Demo en vivo:** [https://cloudstock.netlify.app](https://cloudstock.netlify.app)
 
-![CloudStock Screenshot](https://via.placeholder.com/800x400?text=Captura+de+CloudStock)
-*(Sustituye este link por una captura real de tu app)*
 
 ## 🚀 Características
 
